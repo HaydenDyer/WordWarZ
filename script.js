@@ -1,5 +1,4 @@
-const alphabet = [
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ];
 
 const begin = document.querySelector('#begin');
@@ -14,9 +13,11 @@ let maxAttempts = 5;
 alphabet.forEach((letter) => {
     let key = document.createElement('button');
     key.innerText = letter;
-    key.id = `${key.innerText}`;
     key.className = 'key';
     keyboard.appendChild(key);
+    if (wordDisplay.innerText != '') {
+        key.remove();
+    };
     key.addEventListener('click', () => {
         if (answer.includes(letter)) {
             const wordArray = wordDisplay.innerText.split('');
@@ -32,14 +33,18 @@ alphabet.forEach((letter) => {
                 }, 200);
             };
         } else {
-            attempts += 1;
+            if (wordDisplay.innerText !== '') {
+                attempts += 1;
+            };
             if (attempts >= maxAttempts) {
                 setTimeout(() => {
                     alert('You lose!');
                 }, 200);
             }
         }
-        key.remove();
+        if (wordDisplay.innerText != '') {
+            key.remove();
+        };
     });
 });
 
