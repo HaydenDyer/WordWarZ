@@ -1,5 +1,4 @@
-const alphabet = [
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ];
 
 const begin = document.querySelector('#begin');
@@ -14,7 +13,6 @@ let maxAttempts = 5;
 alphabet.forEach((letter) => {
     let key = document.createElement('button');
     key.innerText = letter;
-    key.id = `${key.innerText}`;
     key.className = 'key';
     keyboard.appendChild(key);
     key.addEventListener('click', () => {
@@ -32,14 +30,31 @@ alphabet.forEach((letter) => {
                 }, 200);
             };
         } else {
-            attempts += 1;
+            if (wordDisplay.innerText !== '') {
+                attempts += 1;
+            };
             if (attempts >= maxAttempts) {
                 setTimeout(() => {
                     alert('You lose!');
                 }, 200);
+                image.setAttribute('src', './gamelost.png')
             }
         }
-        key.remove();
+        if (attempts === 1) {
+            image.setAttribute('src', './door4lives.png')
+        }
+        if (attempts === 2) {
+        image.setAttribute('src', './door3lives.png')
+        }
+        if (attempts === 3) {
+        image.setAttribute('src', './door2lives.png')
+        }
+        if (attempts === 4) {
+        image.setAttribute('src', './door1life.png')
+        }
+        if (wordDisplay.innerText != '') {
+            key.remove();
+        };
     });
 });
 

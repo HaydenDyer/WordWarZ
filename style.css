@@ -1,0 +1,103 @@
+:root {
+    --dark: #130908;
+    --light: #FFEEE0;
+}
+
+body {
+    background-color: var(--dark);
+    font-family: 'Creepster', serif;
+}
+
+h1 {
+    color: #641812;
+    font-family: 'Creepster', serif;
+    font-size: 96px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 16px;
+    margin: 24px auto;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+}
+
+.key {
+    color: var(--light);
+    background: var(--dark);
+    font-family: 'Creepster', serif;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    margin: 8px 2px;
+    border-radius: 4px;
+}
+
+.keyboard {
+    background: #20200D;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.setWord {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.wordDisplay {
+    color: var(--light);
+    font-family: 'Creepster', serif;
+    font-size: 64px;
+    text-align: center;
+    letter-spacing: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#begin {
+    font-family: 'Creepster', serif;
+    font-size: 28px;
+    align-content: center;
+    width: 96px;
+    height: 48px;
+    margin: 0px 8px 0px 8px;
+    flex-wrap: wrap;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+#img {
+    width: 480px;
+}
+
+#wordInput {
+    font-family: 'Creepster', serif;
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 360px;
+    height: 64px;
+    flex-wrap: wrap;
+    align-content: center;
+    background-color: var(--light);
+}
+
+::placeholder {
+    font-size: 32px;
+    display: flex;
+    color: #CCBBAA;
+}
