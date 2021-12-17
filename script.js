@@ -15,9 +15,6 @@ alphabet.forEach((letter) => {
     key.innerText = letter;
     key.className = 'key';
     keyboard.appendChild(key);
-    if (wordDisplay.innerText != '') {
-        key.remove();
-    };
     key.addEventListener('click', () => {
         if (answer.includes(letter)) {
             const wordArray = wordDisplay.innerText.split('');
@@ -40,7 +37,20 @@ alphabet.forEach((letter) => {
                 setTimeout(() => {
                     alert('You lose!');
                 }, 200);
+                image.setAttribute('src', './gamelost.png')
             }
+        }
+        if (attempts === 1) {
+            image.setAttribute('src', './door4lives.png')
+        }
+        if (attempts === 2) {
+        image.setAttribute('src', './door3lives.png')
+        }
+        if (attempts === 3) {
+        image.setAttribute('src', './door2lives.png')
+        }
+        if (attempts === 4) {
+        image.setAttribute('src', './door1life.png')
         }
         if (wordDisplay.innerText != '') {
             key.remove();
